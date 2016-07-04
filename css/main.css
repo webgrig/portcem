@@ -388,7 +388,7 @@ header .main_content .form_right form .column .item {
 }
 header .main_content .form_right form .column .item.select {
   position: relative;
-  /* 
+  /*
 							&::after {
 								content: "";
 								width: 13px;
@@ -669,7 +669,7 @@ header .main_content .form_right form .check_block label.active {
   position: absolute;
   width: 175px;
   right: 0;
-  top: 89px;
+  top: 140px;
   z-index: 22;
 }
 .delivery .right_nav ul li {
@@ -938,7 +938,7 @@ header .main_content .form_right form .check_block label.active {
 }
 .delivery .form_wrap .form form .column .item.select {
   position: relative;
-  /* 
+  /*
 							&::after {
 								content: "";
 								width: 13px;
