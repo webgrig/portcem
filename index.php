@@ -76,8 +76,8 @@
 							<h5>Спасибо!</h5>
 							<p>Ваша заявка принята.</p>
 						</div>
-						<input type="text" placeholder="Ваше имя">
-						<input type="text" placeholder="Ваш телефон">
+						<input type="text" name="name" placeholder="Ваше имя">
+						<input type="text" class="phoneMask" name="phone" placeholder="Ваш телефон">
 						<div class="column">
 							<div class="item select">
 								<p>Марка</p>
@@ -301,8 +301,8 @@
 						</div>
 
 
-						<input type="text" placeholder="Ваше имя">
-						<input type="text" placeholder="Ваш телефон">
+						<input type="text" name="name" placeholder="Ваше имя">
+						<input type="text" class="phoneMask" name="phone" placeholder="Ваш телефон">
 						<div class="column">
 							<div class="item select">
 								<p>Марка</p>
@@ -417,8 +417,8 @@
 
 	<div class="hidden">
 		<form action="#" id="modal" class="modal">
-			<input type="text" placeholder="Ваше имя">
-			<input type="text" placeholder="Ваш телефон">
+			<input type="text" name="name" placeholder="Ваше имя">
+			<input type="text" class="phoneMask" name="phone" placeholder="Ваш телефон">
 			<button>Заказать звонок</button>
 		</form>
 		<div id="thanks_pop">
@@ -432,6 +432,7 @@
 	<script type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 	<script src="scripts/owl.carousel.min.js"></script>
 	<script src="scripts/jquery-ui.min.js"></script>
+	<script src="scripts/jquery.maskedinput.min.js"></script>
 	<script src="scripts/scripts.js"></script>
 
 

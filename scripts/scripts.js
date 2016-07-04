@@ -9,13 +9,13 @@ $(document).ready(function() {
 	$('header .main_content .form_right form').submit(function(e) {
 
 		e.preventDefault();
-		
+
 		$('.shadow').fadeIn();
 		$('header .main_content .form_right form .thanks').fadeIn();
 
 		setTimeout(function() {
 			$('.shadow').fadeOut();
-			$('header .main_content .form_right form .thanks').fadeOut();	
+			$('header .main_content .form_right form .thanks').fadeOut();
 		},3000);
 
 		return false;
@@ -25,13 +25,13 @@ $(document).ready(function() {
 	$('.delivery .form_wrap .form form').submit(function(e) {
 
 		e.preventDefault();
-		
+
 		$('.shadow2').fadeIn();
 		$('.delivery .form_wrap .form .thanks').fadeIn();
 
 		setTimeout(function() {
 			$('.shadow2').fadeOut();
-			$('.delivery .form_wrap .form .thanks').fadeOut();	
+			$('.delivery .form_wrap .form .thanks').fadeOut();
 		},3000);
 
 		return false;
@@ -54,7 +54,7 @@ $(document).ready(function() {
 
 	$('header .main_content .form_right form .column .item.select').click(function() {
 		var element  =  $(this).find('select');
-/*		openSelect('element');*/ 
+		//openSelect('element');
 		element.triggerHandler( "click" );
 	});
 
@@ -74,7 +74,7 @@ $(document).ready(function() {
 		else {
 			$('body,html').animate( { scrollTop: destination }, 1100 );
 		}
-		
+
 		return false;
 	});
 
@@ -96,7 +96,7 @@ $(document).ready(function() {
 		else {
 			$('body,html').animate( { scrollTop: destination }, 1100 );
 		}
-		
+
 		return false;
 	});
 
@@ -130,17 +130,17 @@ $(document).ready(function() {
 	});
 
 	$('.comments .content').owlCarousel({
-		nav : true, 
+		nav : true,
 		slideSpeed : 300,
-		paginationSpeed : 400,		
+		paginationSpeed : 400,
 		items: 1,
 		navText: ""
 	});
 
 	$('.sertificate .slider').owlCarousel({
-		nav : true, 
+		nav : true,
 		slideSpeed : 300,
-		paginationSpeed : 400,		
+		paginationSpeed : 400,
 		navText: "",
 		mouseDrag: false,
 		responsive: {
@@ -171,9 +171,9 @@ $(document).ready(function() {
 
 	owl = $('.delivery .slider_wrap');
 	owl.owlCarousel({
-		nav : true, 
+		nav : true,
 		slideSpeed : 300,
-		paginationSpeed : 400,		
+		paginationSpeed : 400,
 		items: 1,
 		slideSpeed : 500,
 		navSpeed: 500,
@@ -212,11 +212,11 @@ $(document).ready(function() {
     				$('.main_top .slider_nav ul li:nth-child(1)').find('a').trigger('click');
     			}
 
-    
-    			
-    			},  $('.time_slide').val());    			
+
+
+    			},  $('.time_slide').val());
     		}
-    		else {    			
+    		else {
     			$('.main_top .slider_nav ul li:nth-child('+current_slide+')').find('a').trigger('click');
     		}*/
 
@@ -230,6 +230,12 @@ $(document).ready(function() {
 		padding: 0
 	});
 
+	$(function(){
+		$.mask.definitions['9'] = '';
+		$.mask.definitions['n'] = '[0-9]';
+	  $(".phoneMask").mask("7(926) nnn-nn-nn");
+	});
+
 });
 
 function init() {
@@ -237,7 +243,7 @@ function init() {
 
 	if (window.matchMedia("(min-width: 980px)").matches) {
 		var myMap = new ymaps.Map('map', {
-			center: [55.317151022621436,38.698473499999984], 
+			center: [55.317151022621436,38.698473499999984],
 			zoom: 16
 		});
 
@@ -245,14 +251,14 @@ function init() {
 			[55.314177022621436,38.692473499999984] , {
 				hintContent: 'Фасованый цемент '
 			}, {
-				iconImageHref: 'img/icon.png', 
-				iconImageSize: [51, 64], 
-				iconImageOffset: [-6, -10] 
-			}); 
-	} 
+				iconImageHref: 'img/icon.png',
+				iconImageSize: [51, 64],
+				iconImageOffset: [-6, -10]
+			});
+	}
 	else {
 		var myMap = new ymaps.Map('map', {
-			center: [55.314177022621436,38.692473499999984], 
+			center: [55.314177022621436,38.692473499999984],
 			zoom: 16
 		});
 
@@ -260,16 +266,16 @@ function init() {
 			[55.314177022621436,38.692473499999984] , {
 				hintContent: 'Фасованый цемент '
 			}, {
-				iconImageHref: 'img/icon.png', 
-				iconImageSize: [51, 64], 
-				iconImageOffset: [-6, -10] 
-			}); 
+				iconImageHref: 'img/icon.png',
+				iconImageSize: [51, 64],
+				iconImageOffset: [-6, -10]
+			});
 	}
 
 
 
 
-	
+
 
 	myMap.behaviors.disable('drag');
 	myMap.geoObjects.add(myPlacemark);
