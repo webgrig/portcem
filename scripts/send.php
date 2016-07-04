@@ -14,7 +14,7 @@ $Cc = array_walk($to, function($item, $key) use ($CcStr){
 	}
 });
 $subject = "Заявка";
-$headers = 'Content-type: text/plain; charset=windows-1251' . "\r\n" . "From: <{$_SERVER['HTTP_HOST']}>\r\n" . 'Cc: ' .$CcStr.  "\r\n" . 'X-Mailer: PHP/' . phpversion();
+$headers = 'Content-type: text/plain; charset=utf-8' . "\r\n" . "From: <{$_SERVER['HTTP_HOST']}>\r\n" . 'Cc: ' .$CcStr.  "\r\n" . 'X-Mailer: PHP/' . phpversion();
 
 if(mail($to[0], $subject, $message, $headers))
 	echo "OK";
