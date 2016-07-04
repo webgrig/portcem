@@ -233,7 +233,7 @@ $(document).ready(function() {
 	$(function(){
 		$.mask.definitions['9'] = '';
 		$.mask.definitions['n'] = '[0-9]';
-	  $(".phoneMask").mask("7(926) nnn-nn-nn");
+	  $(".phoneMask").mask("+7 (926) nnn-nn-nn");
 	});
 
 });
