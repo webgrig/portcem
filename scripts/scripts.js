@@ -9,12 +9,12 @@ $(document).ready(function() {
 		e.preventDefault();
 		var form = $(this);
 		var errField = false;
-		// $(form).find('input[req="required"]').each(function(){
-		// 	if($(this).val() == ""){
-		// 		errField = true;
-		// 		$(this).addClass('errorInput');
-		// 	}
-		// });
+		$(form).find('input[req="required"]').each(function(){
+			if($(this).val() == ""){
+				errField = true;
+				$(this).addClass('errorInput');
+			}
+		});
 		if (!errField) {
 			var formData = form.serializeArray();
 			$.ajax({

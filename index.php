@@ -113,7 +113,7 @@
 							<label><input type="radio" name="delivery" value="0">Самовывоз</label>
 							<div class="clearfix"></div>
 						</div>
-						<input type="text"  class="dis" placeholder="Адрес доставки" name="address">
+						<input type="text"  class="dis" placeholder="Адрес доставки" name="address" req="required">
 						<button>Перезвоним через 5 минут</button>
 					</form>
 				</div>
