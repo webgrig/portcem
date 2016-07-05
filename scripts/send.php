@@ -66,7 +66,7 @@ foreach ($resArr as $key => $value) {
 			$message .= "Доставка: да\r\n";
 		}
 		if ($value == 0) {
-			$message .= "Доставка: Самовывоз\r\n";
+			$message .= "Самовывоз\r\n";
 		}
 	}
 	if ($key == "address") {
