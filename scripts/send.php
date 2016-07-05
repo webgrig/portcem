@@ -40,22 +40,22 @@ $to = [
 	'grigoriev.ua@gmail.com',
 	'webgrig@mail.ru'
 ];
-$message = "Заявка: \r\n";
+$message = "Заявка \r\n";
 foreach ($resArr as $key => $value) {
 	if ($key == "name") {
-		$message .= "Имя:".$resArr['name']."\r\n";
+		$message .= "Имя: ".$resArr['name']."\r\n";
 	}
 	if ($key == "phone") {
-		$message .= "Номер:".$resArr['phone']."\r\n";
+		$message .= "Номер: ".$resArr['phone']."\r\n";
 	}
 	if ($key == "marka") {
-		$message .= "Марка:".$resArr['marka']."\r\n";
+		$message .= "Марка: ".$resArr['marka']."\r\n";
 	}
 	if ($key == "upakovka") {
-		$message .= "Упаковка:".$resArr['upakovka']."\r\n";
+		$message .= "Упаковка: ".$resArr['upakovka']."\r\n";
 	}
 	if ($key == "amount") {
-		$message .= "Количество:".$resArr['amount']."\r\n";
+		$message .= "Количество: ".$resArr['amount']."\r\n";
 	}
 	if ($key == "delivery") {
 		if ($value == 1) {
@@ -63,7 +63,7 @@ foreach ($resArr as $key => $value) {
 		}
 	}
 	if ($key == "address") {
-		$message .= "Адресс:".$resArr['address']."\r\n";
+		$message .= "Адресс: ".$resArr['address']."\r\n";
 	}
 }
 
