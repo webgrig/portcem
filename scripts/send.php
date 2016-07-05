@@ -41,7 +41,7 @@ $to = [
 	'webgrig@mail.ru'
 ];
 ///////////////
-$date = date("d-m-y H:i:s");
+$date = date("d.m.Y в H:i:s");
 $message = "Заявка ($date)\r\n";
 foreach ($resArr as $key => $value) {
 	if ($key == "name") {
