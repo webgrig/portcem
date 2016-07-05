@@ -49,13 +49,13 @@ foreach ($resArr as $key => $value) {
 		$message .= "Номер: ".$resArr['phone']."\r\n";
 	}
 	if ($key == "marka") {
-		$message .= "Марка: ".$resArr['marka']."\r\n";
+		$message .= "Марка: М".$resArr['marka']."\r\n";
 	}
 	if ($key == "upakovka") {
-		$message .= "Упаковка: ".$resArr['upakovka']."\r\n";
+		$message .= "Упаковка: ".$resArr['upakovka']."кг.\r\n";
 	}
 	if ($key == "amount") {
-		$message .= "Количество: ".$resArr['amount']."\r\n";
+		$message .= "Количество: ".$resArr['amount']."шт.\r\n";
 	}
 	if ($key == "delivery") {
 		if ($value == 1) {
