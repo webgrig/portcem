@@ -76,28 +76,28 @@
 							<h5>Спасибо!</h5>
 							<p>Ваша заявка принята.</p>
 						</div>
-						<input type="text" name="name" placeholder="Ваше имя">
-						<input type="text" class="phoneMask" name="phone" placeholder="Ваш телефон">
+						<input type="hidden" name="formNumber" value="1">
+						<input type="text" name="name" placeholder="Ваше имя" req="required">
+						<input type="text" class="phoneMask" name="phone" placeholder="Ваш телефон" req="required">
 						<div class="column">
 							<div class="item select">
 								<p>Марка</p>
-								<select>
-									<option value="м500 д0">м500 д0</option>
-									<option value="м500 д0">м500 д0</option>
-									<option value="м500 д0">м500 д0</option>
+								<select name="marka">
+									<option value="500">м500</option>
+									<option value="400">м400</option>
 								</select>
 							</div>
 							<div class="item select">
 								<p>Упаковка</p>
-								<select>
-									<option value="50 кг">50 кг</option>
-									<option value="50 кг">50 кг</option>
-									<option value="50 кг">50 кг</option>
+								<select name="upakovka">
+									<option value="45">45 кг</option>
+									<option value="50">50 кг</option>
+									<option value="1000">1 т</option>
 								</select>
 							</div>
 							<div class="item">
 								<p>Количество</p>
-								<input type="text">
+								<input type="text" name="amount" class="amount" req="required">
 							</div>
 						</div>
 						<div class="price">
@@ -109,11 +109,11 @@
 							<div class="clearfix"></div>
 						</div>
 						<div class="check_block">
-							<label class="active" ><input type="radio" name="group" checked>С доставкой</label>
-							<label><input type="radio" name="group">Самовывоз</label>
+							<label class="active" ><input type="radio" name="delivery" value="1" checked>С доставкой</label>
+							<label><input type="radio" name="delivery" value="0">Самовывоз</label>
 							<div class="clearfix"></div>
 						</div>
-						<input type="text"  class="dis" placeholder="Адрес доставки">
+						<input type="text"  class="dis" placeholder="Адрес доставки" name="address">
 						<button>Перезвоним через 5 минут</button>
 					</form>
 				</div>
@@ -299,33 +299,31 @@
 							<h5>Спасибо!</h5>
 							<p>Ваша заявка принята.</p>
 						</div>
-
-
-						<input type="text" name="name" placeholder="Ваше имя">
-						<input type="text" class="phoneMask" name="phone" placeholder="Ваш телефон">
+						<input type="hidden" name="formNumber" value="2">
+						<input type="text" name="name" placeholder="Ваше имя" req="required">
+						<input type="text" class="phoneMask" name="phone" placeholder="Ваш телефон" req="required">
 						<div class="column">
 							<div class="item select">
 								<p>Марка</p>
-								<select>
-									<option value="м500 д0">м500 д0</option>
-									<option value="м500 д0">м500 д0</option>
-									<option value="м500 д0">м500 д0</option>
+								<select name="marka">
+									<option value="500">м500</option>
+									<option value="400">м400</option>
 								</select>
 							</div>
 							<div class="item select">
 								<p>Упаковка</p>
-								<select>
-									<option value="50 кг">50 кг</option>
-									<option value="50 кг">50 кг</option>
-									<option value="50 кг">50 кг</option>
+								<select name="upakovka">
+									<option value="45">45 кг</option>
+									<option value="50">50 кг</option>
+									<option value="1000">1 т</option>
 								</select>
 							</div>
 							<div class="item">
 								<p>Количество</p>
-								<input type="text">
+								<input type="text" name="amount" class="amount" req="required">
 							</div>
 						</div>
-						<input type="text" placeholder="Адрес доставки">
+						<input type="text" placeholder="Адрес доставки" name="address" req="required">
 						<button>Узнать стоимость</button>
 					</form>
 				</div>
@@ -417,8 +415,9 @@
 
 	<div class="hidden">
 		<form action="#" id="modal" class="modal">
-			<input type="text" name="name" placeholder="Ваше имя">
-			<input type="text" class="phoneMask" name="phone" placeholder="Ваш телефон">
+			<input type="hidden" name="formNumber" value="3">
+			<input type="text" name="name" placeholder="Ваше имя" req="required">
+			<input type="text" class="phoneMask" name="phone" placeholder="Ваш телефон" req="required">
 			<button>Заказать звонок</button>
 		</form>
 		<div id="thanks_pop">

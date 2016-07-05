@@ -1,51 +1,65 @@
 $(document).ready(function() {
 
-	$('#modal').submit(function(e) {
-		e.preventDefault();
-		$.fancybox('#thanks_pop');
-		return false;
-	});
-
-	function shadow(shadow){
-		$(shadow).toggle();
+	function goPopUp(e){
+		$(e.data.shadow).toggle();
+		$('.thanks').toggle();
 	};
-	$('header .main_content .form_right form').submit(function(e) {
 
+	function thanks(e){
 		e.preventDefault();
-		var formData = $(this).serializeArray();
-		$.ajax({
-			type: 'POST',
-			url: '/scripts/send.php',
-			data: {formData:formData},
-			success: function(data){
-				console.log(data);
-			}
-		});
-		shadow('.shadow');
-		$('header .main_content .form_right form .thanks').toggle();
-
-		setTimeout(function() {
-			shadow('.shadow');
-			$('header .main_content .form_right form .thanks').toggle();
-		},3000);
-
+		var form = $(this);
+		var errField = false;
+		// $(form).find('input[req="required"]').each(function(){
+		// 	if($(this).val() == ""){
+		// 		errField = true;
+		// 		$(this).addClass('errorInput');
+		// 	}
+		// });
+		if (!errField) {
+			var formData = form.serializeArray();
+			$.ajax({
+				type: 'POST',
+				url: '/scripts/send.php',
+				data: {formData:formData},
+				success: function(data){
+					if (data == "OK") {
+						var formNumber = form.find('input[name="formNumber"]').val();
+						if (formNumber == 1 || formNumber == 2){
+							goPopUp(e);
+						}
+						if (formNumber == 3){
+							$.fancybox('#thanks_pop');
+						}
+						setTimeout(function() {
+							if (formNumber == 1 || formNumber == 2){
+								goPopUp(e);
+							}
+							if (formNumber == 3){
+								//$.fancybox('#thanks_pop');
+								$.fancybox.close();
+							}
+							$(form).find('input').each(function(){
+								$(this).val('');
+							});
+						},3000);
+					}
+					else {
+						var errObj = $.parseJSON(data);
+						for (var i = errObj.length - 1; i >= 0; i--) {
+							var input = 'input[name="'+errObj[i]+'"]';
+							form.find(input).addClass('errorInput');
+						}
+					}
+				}
+			});
+		}
 		return false;
-	});
-
-
-	$('.delivery .form_wrap .form form').submit(function(e) {
-
-		e.preventDefault();
-
-		shadow('.shadow2');
-		$('.delivery .form_wrap .form .thanks').toggle();
-
-		setTimeout(function() {
-			shadow('.shadow2');
-			$('.delivery .form_wrap .form .thanks').toggle();
-		},3000);
-
-		return false;
+	};
+	$('header .main_content .form_right form').bind('submit', {'shadow': '.shadow'}, thanks);
+	$('.delivery .form_wrap .form form').bind('submit', {'shadow': '.shadow2'}, thanks);
+	$('#modal').bind('submit', thanks);
+	$('input[name="name"], input[name="phone"], input[name="amount"], input[name="address"]').on('focus', function(){
+			$(this).removeClass('errorInput');
 	});
 
 
@@ -239,7 +253,8 @@ $(document).ready(function() {
 	$(function(){
 		$.mask.definitions['9'] = '';
 		$.mask.definitions['n'] = '[0-9]';
-	  $(".phoneMask").mask("+7 (nnn) nnn-nn-nn");
+		$(".phoneMask").mask("+7 (nnn) nnn-nn-nn?n");
+		$(".amount").mask("n?nnnnn шт.");
 	});
 
 });

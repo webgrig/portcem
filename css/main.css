@@ -433,6 +433,7 @@ header .main_content .form_right form .column .item input {
   font-size: 18px;
   border-bottom: solid 2px #c8c8c8;
   background: none;
+  padding-top: 12px;
 }
 header .main_content .form_right form .column .item p {
   color: #999999;
@@ -983,6 +984,7 @@ header .main_content .form_right form .check_block label.active {
   font-size: 18px;
   border-bottom: solid 2px #c8c8c8;
   background: none;
+  padding-top: 12px;
 }
 .delivery .form_wrap .form form .column .item p {
   color: #999999;
@@ -2537,4 +2539,9 @@ form.modal button:hover {
     width: 100%;
     padding: 25px;
   }
+}
+
+.errorInput {
+  border: '1px solid #f36e6e' !important;
+  background: rgba(255, 0, 0, 0.24) !important;
 }
