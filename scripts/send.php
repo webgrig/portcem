@@ -40,7 +40,33 @@ $to = [
 	'grigoriev.ua@gmail.com',
 	'webgrig@mail.ru'
 ];
-$message = "Заявка: \r\nИмя:".$resArr['name']."\r\nНомер:".$resArr['phone'];
+$message = "Заявка: \r\n".
+foreach ($resArr as $key => $value) {
+	if ($key == "name") {
+		$message .= "Имя:".$resArr['name']."\r\n";
+	}
+	if ($key == "phone") {
+		$message .= "Номер:".$resArr['phone']."\r\n";
+	}
+	if ($key == "marka") {
+		$message .= "Марка:".$resArr['marka']."\r\n";
+	}
+	if ($key == "upakovka") {
+		$message .= "Упаковка:".$resArr['upakovka']."\r\n";
+	}
+	if ($key == "amount") {
+		$message .= "Количество:".$resArr['amount']."\r\n";
+	}
+	if ($key == "delivery") {
+		if ($value == 1) {
+			$message .= "Доставка: да\r\n";
+		}
+	}
+	if ($key == "address") {
+		$message .= "Адресс:".$resArr['address']."\r\n";
+	}
+}
+
 $CcArr = [];
 $Cc = array_walk($to, function($item, $key) use (&$CcArr){
 	if ($key) {
