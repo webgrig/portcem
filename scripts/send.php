@@ -65,6 +65,9 @@ foreach ($resArr as $key => $value) {
 		if ($value == 1) {
 			$message .= "Доставка: да\r\n";
 		}
+		if ($value == 0) {
+			$message .= "Доставка: Самовывоз\r\n";
+		}
 	}
 	if ($key == "address") {
 		$message .= "Адресс: ".$resArr['address']."\r\n";
