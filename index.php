@@ -104,7 +104,7 @@
 							<span>Цена без доставки</span>
 							<div class="right">
 								<div class="before"></div>
-								8 765 <small>руб</small>
+								<span id="stoimost"></span> <small>руб.</small>
 							</div>
 							<div class="clearfix"></div>
 						</div>
@@ -433,6 +433,8 @@
 	<script src="scripts/owl.carousel.min.js"></script>
 	<script src="scripts/jquery-ui.min.js"></script>
 	<script src="scripts/jquery.maskedinput.min.js"></script>
+	<script src="scripts/accounting.min.js"></script>
+	<script src="scripts/calc.js"></script>
 	<script src="scripts/scripts.js"></script>
 
 
