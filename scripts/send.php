@@ -1,5 +1,7 @@
 <?php
 $resArr = [];
+// print_r($_POST['formData']);
+// exit;
 foreach ($_POST['formData'] as $value) {
 	if ($value['value'] !== "") {
 		$resArr[$value['name']] = $value['value'];
