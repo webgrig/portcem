@@ -323,6 +323,7 @@
 								<input type="text" name="amount" class="amount" req="required">
 							</div>
 						</div>
+						<input type="hidden" name="delivery" value="1">
 						<input type="text" placeholder="Адрес доставки" name="address" req="required">
 						<button>Узнать стоимость</button>
 					</form>
