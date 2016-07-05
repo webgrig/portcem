@@ -41,7 +41,7 @@ if (!empty($resErr)) {
 $to = [
 	'grigoriev.ua@gmail.com',
 	'webgrig@mail.ru',
-	'webprotect.pro@gmail.com'
+	'seodrug@gmail.com'
 ];
 ///////////////
 $date = date("d.m.Y в Hч.iм.sс.");
