@@ -40,7 +40,7 @@ $to = [
 	'grigoriev.ua@gmail.com',
 	'webgrig@mail.ru'
 ];
-$message = "Заявка: \r\n".
+$message = "Заявка: \r\n";
 foreach ($resArr as $key => $value) {
 	if ($key == "name") {
 		$message .= "Имя:".$resArr['name']."\r\n";
