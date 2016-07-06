@@ -141,7 +141,7 @@
 							<label><input type="radio" name="delivery" value="0">Самовывоз</label>
 							<div class="clearfix"></div>
 						</div>
-						<input type="text" class="dis" placeholder="Адрес доставки" name="address" req="required" id="suggest" autocomplete="off">
+						<input type="text" class="dis" placeholder="Адрес доставки" name="address" req="required" id="suggest">
 						<button>Перезвоним через 5 минут</button>
 					</form>
 				</div>
@@ -352,7 +352,7 @@
 							</div>
 						</div>
 						<input type="hidden" name="delivery" value="1">
-						<input type="text" placeholder="Адрес доставки" name="address" req="required" autocomplete="off">
+						<input type="text" placeholder="Адрес доставки" name="address" req="required">
 						<button>Узнать стоимость</button>
 					</form>
 				</div>
