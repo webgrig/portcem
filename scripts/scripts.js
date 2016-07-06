@@ -323,7 +323,14 @@ function init() {
 	myMap.geoObjects.add(squarePlacemark);
 
 
-	var suggestView = new ymaps.SuggestView('suggest');
+
+	$('input[name=address]').bind('click', function(){
+		$('input[name=address]').each(function(){
+			$(this).removeAttr("id");
+		});
+		$(this).attr({'id':'suggest'});
+		var suggestView = new ymaps.SuggestView('suggest');
+	});
 
 
 
