@@ -40,7 +40,6 @@ if (!empty($resErr)) {
 }
 $to = [
 	'grigoriev.ua@gmail.com',
-	'webgrig@mail.ru',
 	'seodrug@gmail.com'
 ];
 ///////////////
