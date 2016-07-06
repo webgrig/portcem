@@ -289,46 +289,48 @@ function init() {
 			center: [55.317151022621436,38.698473499999984],
 			zoom: 16
 		});
-
-		var myPlacemark = new ymaps.Placemark(
-			[55.314177022621436,38.692473499999984] , {
-				hintContent: 'Фасованый цемент '
-			}, {
-				iconImageHref: 'img/icon.png',
-				iconImageSize: [51, 64],
-				iconImageOffset: [-6, -10]
-			});
 	}
 	else {
 		var myMap = new ymaps.Map('map', {
 			center: [55.314177022621436,38.692473499999984],
 			zoom: 16
 		});
-
-		var myPlacemark = new ymaps.Placemark(
-			[55.314177022621436,38.692473499999984] , {
-				hintContent: 'Фасованый цемент '
-			}, {
-				iconImageHref: 'img/icon.png',
-				iconImageSize: [51, 64],
-				iconImageOffset: [-6, -10]
-			});
 	}
 
 
 
+	// Создание метки с квадратной активной областью.
+	var squareLayout = ymaps.templateLayoutFactory.createClass('<div class="placemark_layout_container"><div class="square_layout"><img src="/img/icon.png"></div></div>');
 
+	var squarePlacemark = new ymaps.Placemark(
+			[55.314177022621436,38.692473499999984], {
+				hintContent: 'Фасованый цемент'
+		}, {
+			iconLayout: squareLayout,
+			// Описываем фигуру активной области "Прямоугольник".
+			iconShape: {
+				type: 'Rectangle',
+				// Прямоугольник описывается в виде двух точек - верхней левой и нижней правой.
+				coordinates: [
+					[51, 64], [-6, -10]
+				]
+			}
+		}
+	);
 
 
 	myMap.behaviors.disable('drag');
-	myMap.geoObjects.add(myPlacemark);
+	myMap.geoObjects.add(squarePlacemark);
+
+
+	var suggestView = new ymaps.SuggestView('suggest');
 
 
 
 }
 
-$(window).load(function() {
+ymaps.ready(function () {
 
-	ymaps.ready(init);
+	init();
 
 });

@@ -113,7 +113,7 @@
 							<label><input type="radio" name="delivery" value="0">Самовывоз</label>
 							<div class="clearfix"></div>
 						</div>
-						<input type="text"  class="dis" placeholder="Адрес доставки" name="address" req="required">
+						<input type="text"  class="dis" placeholder="Адрес доставки" name="address" req="required" id="suggest">
 						<button>Перезвоним через 5 минут</button>
 					</form>
 				</div>
@@ -387,9 +387,7 @@
 			</div>
 			<div class="clearfix"></div>
 		</div>
-
 	</div>
-
 	<div class="map_block">
 		<div id="map"></div>
 		<div class="contacts">
@@ -413,7 +411,6 @@
 
 	<div id="map_block"></div>
 
-
 	<div class="hidden">
 		<form action="#" id="modal" class="modal">
 			<input type="hidden" name="formNumber" value="3">
@@ -427,7 +424,8 @@
 		</div>
 	</div>
 
-	<script src="http://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU" type="text/javascript"></script>
+	<!--script src="http://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU" type="text/javascript"></script-->
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 	<script src="scripts/jquery-1.11.1.min.js"></script>
 	<script type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 	<script src="scripts/owl.carousel.min.js"></script>
