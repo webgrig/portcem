@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Portland</title>
 	<link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
+	<link rel="SHORTCUT ICON" href="/favicon.ico">
 	<link rel="stylesheet" href="fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
 	<link rel="stylesheet" href="css/owl.carousel.css">
 	<link rel="stylesheet" href="css/jquery-ui.min.css">
