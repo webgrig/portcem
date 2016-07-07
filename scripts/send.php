@@ -44,7 +44,7 @@ $to = [
 ];
 ///////////////
 $date = date("d.m.Y в Hч.iм.sс.");
-$message = "Заявка ($date)\r\n";
+$message = "Форма#$resArr['formNumber']($date)\r\n";
 foreach ($resArr as $key => $value) {
 	if ($key == "name") {
 		$message .= "Имя: ".$resArr['name']."\r\n";
@@ -81,7 +81,7 @@ $Cc = array_walk($to, function($item, $key) use (&$CcArr){
 	}
 });
 $CcStr = implode(";", $CcArr);
-$subject = "Заявка ($date)";
+$subject = "Форма#$resArr['formNumber']($date)";
 $headers = 'Content-type: text/plain; charset=utf-8' . "\r\n" . "From: <{$_SERVER['HTTP_HOST']}>\r\n" . 'Cc: ' .$CcStr.  "\r\n" . 'X-Mailer: PHP/' . phpversion();
 //echo $headers;exit;
 if(mail($to[0], $subject, $message, $headers)){
