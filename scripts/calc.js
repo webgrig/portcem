@@ -15,11 +15,15 @@ function stoimost(marka, upakovka, amount){
 	var cena;
 	var ves;
 	var ves;
+	marka = parseInt(marka);
+	upakovka = parseInt(upakovka);
+	amount = parseInt(amount);
 	ves = upakovka * amount;
 	cena = calc(marka, upakovka);
 	if(!cena){
 		return false;
 	}
+	cstoimost = 0;
 	if(ves < 5000)
 		cstoimost = cena * amount;
 	else if(ves >= 5000 && ves < 20000)

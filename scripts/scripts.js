@@ -80,7 +80,7 @@ $(document).ready(function() {
 	$('input[name="name"], input[name="phone"], input[name="amount"], input[name="address"]').on('focus', function(){
 			$(this).removeClass('errorInput');
 	});
-	$('[name="marka"], [name="upakovka"], [name="amount"]').bind('change selectmenuchange', function(){
+	$('[name="marka"], [name="upakovka"], [name="amount"]').bind('change keyup selectmenuchange', function(){
 		var itemsParams = '[name="marka"], [name="upakovka"], [name="amount"]';
 		var collectionParams = $(this).parents('form').find(itemsParams);
 		collectionParams.each(function(){
@@ -93,9 +93,6 @@ $(document).ready(function() {
 				amount = $(this).val();
 		});
 		if (marka && upakovka && amount) {
-			marka = Number(marka);
-			upakovka = Number(upakovka);
-			amount = Number(amount);
 			stoimostInt = stoimost(marka, upakovka, amount);
 			stoimostInt = accounting.formatNumber(stoimostInt, 0, ' ');
 			$("#stoimost").html(stoimostInt);
