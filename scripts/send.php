@@ -40,7 +40,8 @@ if (!empty($resErr)) {
 }
 $to = [
 	'grigoriev.ua@gmail.com',
-	'seodrug@gmail.com'
+	'seodrug@gmail.com',
+	'webgrig@mail.ru',
 ];
 ///////////////
 $date = date("d.m.Y в Hч.iм.sс.");
@@ -73,18 +74,11 @@ foreach ($resArr as $key => $value) {
 		$message .= "Адресс: ".$resArr['address']."\r\n";
 	}
 }
-
-$CcArr = [];
-$Cc = array_walk($to, function($item, $key) use (&$CcArr){
-	if ($key) {
-		$CcArr[] = $item;
-	}
-});
-$CcStr = implode(";", $CcArr);
+$to = implode(',', $to);
 $subject = "Форма#$resArr['formNumber']($date)";
 $headers = 'Content-type: text/plain; charset=utf-8' . "\r\n" . "From: <{$_SERVER['HTTP_HOST']}>\r\n" . 'Cc: ' .$CcStr.  "\r\n" . 'X-Mailer: PHP/' . phpversion();
 //echo $headers;exit;
-if(mail($to[0], $subject, $message, $headers)){
+if(mail($to, $subject, $message, $headers)){
 	echo "OK";
 	exit;
 }
