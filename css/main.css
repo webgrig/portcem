@@ -440,6 +440,7 @@ header .main_content .form_right form .column .item p {
   font-size: 14px;
   font-family: 'pf_dindisplay_promedium';
 }
+
 header .main_content .form_right form .price span {
   display: inline-block;
   color: #333333;
@@ -1681,7 +1682,13 @@ form.modal button:hover {
 }
 @media screen and (min-width: 1321px) {
   header .main_content .form_right form .price .right {
-      bottom: -15px;
+    bottom: -15px;
+  }
+  header .main_content .form_right form .price .right span#stoimost {
+    bottom: 9px;
+  }
+  header .main_content .form_right form .price .right small {
+    bottom: 9px;
   }
 }
 @media screen and (max-width: 1320px) {

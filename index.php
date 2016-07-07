@@ -129,7 +129,7 @@
 							</div>
 						</div>
 						<div class="price">
-							<span>Цена без<br>доставки</span>
+							<span >Цена без<br>доставки</span>
 							<div class="right">
 								<span id="stoimost"></span><small>&nbsp;руб.</small>
 							</div>
