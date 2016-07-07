@@ -125,7 +125,7 @@
 							</div>
 							<div class="item">
 								<p>Количество</p>
-								<input type="text" name="amount" class="amount" req="required">
+								<input type="text" name="amount" class="amount" req="required" id="amount">
 							</div>
 						</div>
 						<div class="price">

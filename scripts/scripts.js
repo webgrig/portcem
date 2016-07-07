@@ -294,12 +294,10 @@ $(document).ready(function() {
 		padding: 0
 	});
 
-	$(function(){
-		$.mask.definitions['9'] = '';
-		$.mask.definitions['n'] = '[0-9]';
-		$(".phoneMask").mask("+7 (nnn) nnn-nn-nn");
-		$(".amount").mask("n?nn шт.");
-	});
+	$.mask.definitions['9'] = '';
+	$.mask.definitions['n'] = '[0-9]';
+	$(".phoneMask").mask("+7 (nnn) nnn-nn-nn");
+	$(".amount").mask("n?nn шт.");
 
 });
 
