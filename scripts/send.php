@@ -41,11 +41,11 @@ if (!empty($resErr)) {
 $to = [
 	'grigoriev.ua@gmail.com',
 	'seodrug@gmail.com',
-	'webgrig@mail.ru',
+	'webgrig@mail.ru'
 ];
 ///////////////
 $date = date("d.m.Y в Hч.iм.sс.");
-$message = "Форма#$resArr['formNumber']($date)\r\n";
+$message = "Форма#{$resArr['formNumber']}($date)\r\n";
 foreach ($resArr as $key => $value) {
 	if ($key == "name") {
 		$message .= "Имя: ".$resArr['name']."\r\n";
@@ -75,8 +75,8 @@ foreach ($resArr as $key => $value) {
 	}
 }
 $to = implode(',', $to);
-$subject = "Форма#$resArr['formNumber']($date)";
-$headers = 'Content-type: text/plain; charset=utf-8' . "\r\n" . "From: <{$_SERVER['HTTP_HOST']}>\r\n" . 'Cc: ' .$CcStr.  "\r\n" . 'X-Mailer: PHP/' . phpversion();
+$subject = "Форма#{$resArr['formNumber']}($date)";
+$headers = 'Content-type: text/plain; charset=utf-8' . "\r\n" . "From: <{$_SERVER['HTTP_HOST']}>\r\n" . 'X-Mailer: PHP/' . phpversion();
 //echo $headers;exit;
 if(mail($to, $subject, $message, $headers)){
 	echo "OK";
