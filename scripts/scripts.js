@@ -39,7 +39,13 @@ $(document).ready(function() {
 								$.fancybox.close();
 							}
 							$(form).find('input').each(function(){
-								$(this).val('');
+								if ($(this).attr('name') == 'delivery') {
+									return false;
+								}
+								else{
+									$(this).val('');
+								}
+								$("#stoimost").html('');
 							});
 						},3000);
 					}
@@ -55,8 +61,22 @@ $(document).ready(function() {
 		}
 		return false;
 	};
+	function removeAddress(){
+		if ($(this).val() == 0) {
+			$(this).parents('form').find('[name=address]').remove();
+			$('input[name=address]').unbind();
+			$('input[name=address]').bind('click', addId);
+		}
+		else{
+			$(this).parents('form').find('[name=address]').remove();
+			$(this).parents('.check_block').after('<input type="text" class="dis" placeholder="Адрес доставки" name="address" req="required">');
+			$('input[name=address]').unbind();
+			$('input[name=address]').bind('click', addId);
+		}
+	}
 	$('header .main_content .form_right form').bind('submit', {'shadow': '.shadow'}, thanks);
 	$('.delivery .form_wrap .form form').bind('submit', {'shadow': '.shadow2'}, thanks);
+	$('input[name=delivery]').bind('change', removeAddress);
 	$('#modal').bind('submit', thanks);
 	$('input[name="name"], input[name="phone"], input[name="amount"], input[name="address"]').on('focus', function(){
 			$(this).removeClass('errorInput');
@@ -80,6 +100,9 @@ $(document).ready(function() {
 			stoimostInt = stoimost(marka, upakovka, amount);
 			stoimostInt = accounting.formatNumber(stoimostInt, 0, ' ');
 			$("#stoimost").html(stoimostInt);
+		}
+		else{
+			$("#stoimost").html('');
 		}
 
 	});
@@ -241,7 +264,6 @@ $(document).ready(function() {
 		setTimeout(function() {
 
 			var current_slide = $('.delivery .owl-item.active').index()+1;
-    	//	console.log(current_slide);
     	$('.delivery .right_nav ul li').removeClass('active');
     	$('.delivery .right_nav ul li:nth-child('+current_slide+')').addClass('active');
 
@@ -275,8 +297,8 @@ $(document).ready(function() {
 	$(function(){
 		$.mask.definitions['9'] = '';
 		$.mask.definitions['n'] = '[0-9]';
-		$(".phoneMask").mask("+7 (nnn) nnn-nn-nn?n");
-		$(".amount").mask("n?nnnnn шт.");
+		$(".phoneMask").mask("+7 (nnn) nnn-nn-nn");
+		$(".amount").mask("n?nn шт.");
 	});
 
 });
@@ -321,20 +343,16 @@ function init() {
 
 	myMap.behaviors.disable('drag');
 	myMap.geoObjects.add(squarePlacemark);
-
-
-
-	$('input[name=address]').bind('click', function(){
-		$('input[name=address]').each(function(){
-			$(this).removeAttr("id");
-		});
-		$(this).attr({'id':'suggest'});
-		var suggestView = new ymaps.SuggestView('suggest');
-	});
-
-
-
 }
+
+function addId(){
+	$('input[name=address]').each(function(){
+		$(this).removeAttr("id");
+	});
+	$(this).attr({'id':'suggest'});
+	suggestView = new ymaps.SuggestView('suggest');
+}
+$('input[name=address]').bind('click', addId);
 
 ymaps.ready(function () {
 

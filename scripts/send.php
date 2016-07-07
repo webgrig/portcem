@@ -5,9 +5,9 @@ $resArr = [];
 foreach ($_POST['formData'] as $value) {
 	if ($value['value'] !== "") {
 		$resArr[$value['name']] = $value['value'];
-		//$$value['name'] = $value['value'];
 	}
 }
+// echo "<pre>";
 // print_r($resArr);
 // exit;
 $resErr = [];

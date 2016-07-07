@@ -445,7 +445,7 @@ header .main_content .form_right form .price span {
   color: #333333;
   font-size: 18px;
   float: left;
-  margin-top: 16px;
+  width: 28%;
 }
 header .main_content .form_right form .price .right {
   position: relative;
@@ -454,6 +454,13 @@ header .main_content .form_right form .price .right {
   font-family: 'pf_dindisplay_probold';
   text-transform: uppercase;
   float: right;
+  background: url(../img/point.png);
+  background-position: 0px, 0px;
+  background-repeat: repeat-x;
+  bottom: -27px;
+  width: 70%;
+  text-align: right;
+  line-height: 39px;
 }
 
 header .main_content .form_right form .price .right span#stoimost {
@@ -463,20 +470,20 @@ header .main_content .form_right form .price .right span#stoimost {
   font-family: 'pf_dindisplay_probold';
   text-transform: uppercase;
   margin-top: 0;
-}
-
-header .main_content .form_right form .price .right .before {
-  height: 3px;
-  width: 10px;
-  background: url(../img/point.png);
-  position: absolute;
-  bottom: 10px;
-  right: 100%;
+  background-color: #f2f2f2;
+  display: inline;
+  bottom: 8px;
+  float: none;8
 }
 header .main_content .form_right form .price .right small {
+  position: relative;
   font-size: 18px;
   text-transform: uppercase;
   color: #999999;
+  background-color: #f2f2f2;
+  display: inline;
+  bottom: 8px;8
+  width: 18%;
 }
 header .main_content .form_right form .check_block {
   margin-top: 22px;
@@ -2360,6 +2367,7 @@ form.modal button:hover {
   }
   header .main_content .form_right form .price .right {
     font-size: 24px;
+    bottom: -11px;
   }
   header .main_content .form_right form .price .right small {
     font-size: 13px;
