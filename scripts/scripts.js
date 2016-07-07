@@ -35,7 +35,6 @@ $(document).ready(function() {
 								goPopUp(e);
 							}
 							if (formNumber == 3){
-								//$.fancybox('#thanks_pop');
 								$.fancybox.close();
 							}
 							$(form).find('input').each(function(){

@@ -1378,7 +1378,7 @@ form.modal button:hover {
   background: rgba(0, 0, 0, 0.3);
 }
 #thanks_pop {
-  width: 459px;
+  /*width: 459px;*/
   text-align: left;
   padding: 50px;
   background: #fff;
